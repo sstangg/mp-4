@@ -31,7 +31,7 @@ export default function Cats(props : { data:CatProps[] } ){
         <AllCharsDiv >
             {
                 props.data.map((cat: CatProps) =>
-                    <SingleCharDiv>
+                    <SingleCharDiv key={cat.id}>
                         <img src={cat.url} alt={"cat"}/>
                         <p>{"Cat ID: "+cat.id}</p>
                         <p>Very cute. :)</p>
