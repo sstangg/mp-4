@@ -4,7 +4,11 @@ import { TheCatAPI } from "@thatapicompany/thecatapi";
 import {useEffect, useState} from "react";
 import styled from "styled-components";
 const API_KEY = process.env.CAT_API_KEY;
+if (!API_KEY) {
+    throw new Error("API key for TheCatAPI is missing.");
+}
 const theCatAPI = new TheCatAPI(API_KEY);
+
 
 const ParentDiv=styled.div`
     width: 80vw;
