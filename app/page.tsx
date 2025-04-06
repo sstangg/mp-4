@@ -1,5 +1,6 @@
 "use client"
 import Cats from "@/components/Cats"
+import {CatProps} from "@/types"
 import { TheCatAPI } from "@thatapicompany/thecatapi";
 import {useEffect, useState} from "react";
 import styled from "styled-components";
@@ -17,7 +18,7 @@ const ParentDiv=styled.div`
 `;
 export default function Home() {
     // useState Hook to store Data.
-    const [data, setData] = useState<Cats[]>([]);
+    const [data, setData] = useState<CatProps[]>([]);
     // useEffect Hook for error handling and re-rendering.
     useEffect(() => {
         async function fetchData(): Promise<void> {
